@@ -21,25 +21,7 @@ public class App {
         ArrayList<Facility> openedFacilities = new ArrayList<>();
         ArrayList<Point> unassignedPoints = new ArrayList<>();
         ArrayList<ArrayList<Point>> assignmentList = new ArrayList<>();
-        for (int i=0;i<points.length;i++){
-            unassignedPoints.add(points[i]);
-        }
-        while (unassignedPoints.size() != 0){
-            if (openedFacilities.size() > 0){
-                int[][] assignment = operator.findMinIndex(distanceMatrix);
-                if (openedFacilities.get(openedFacilities.size()-1).supply - assignment[0][1] > 0 ){
-                    openedFacilities.get(openedFacilities.size()-1).supply -= points[assignment[0][1]].demand;
-                    unassignedPoints.remove(points[assignment[0][1]]);
-                    assignmentList.get(openedFacilities.size()-1).add(points[assignment[0][1]]);
-                }
-                else{
-                    // distance matrixte önceki lastı maxla, sonrasında yeniden findmin kullan
-                }
-            }
-            else{
-                // sıfırdan distance aç
-            }
-        }
+        
     }
 }
 
